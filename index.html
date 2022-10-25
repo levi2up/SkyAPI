@@ -1,0 +1,21 @@
+<html>
+<body>
+  
+  <h1>Bazaar</h1>
+  <ul><ul>
+    
+    <script>
+      fetch('https://sky.shiiyu.moe/api/v2/bazaar')
+      .then(res => {
+        res.json();
+      })
+      .then(data => 
+        data.forEach(item => {
+          const markup = '<li>${item.name}<li>':
+          
+          document.querySelector('ul').insertAdjacentHTML('beforeend', markup);
+       })
+      .catch(error => console.log(error));
+    </script>
+</body>
+</html>
